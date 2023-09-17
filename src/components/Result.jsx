@@ -1,7 +1,11 @@
 
-import { Box } from '@mui/material';
+import { Box, styled } from '@mui/material';
 import { useContext, useState, useEffect } from 'react';
 import { DataContext } from '../context/DataProvider';
+
+const Container = styled(Box)`
+    height: 36vh;
+`
 
 
 const Result = () => {
@@ -21,7 +25,7 @@ const Result = () => {
     }, [html, css, js]);
 
     return (
-        <Box>
+        <Container>
             <iframe
                 srcDoc={src}
                 title='OUTPUT'
@@ -30,7 +34,7 @@ const Result = () => {
                 height="100%"
             />
 
-        </Box>
+        </Container>
     )
 };
 
